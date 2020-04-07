@@ -13,5 +13,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Matthew1994/small-health-peis.git"
+  },
+  "author": {
+    "name": "Matthew1994",
+    "email": "minghaoliao1994@gmail.com",
+    "url": "git+https://github.com/Matthew1994/small-health-peis.git"
   }
 }
