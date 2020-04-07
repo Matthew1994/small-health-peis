@@ -63,6 +63,26 @@ export default merge.smart(baseConfig, {
   module: {
     rules: [
       {
+        test: /\.global\.less$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              javascriptEnabled: true
+            }
+          }
+        ]
+      },
+      {
         test: /\.global\.css$/,
         use: [
           {
