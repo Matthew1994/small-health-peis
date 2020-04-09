@@ -34,7 +34,9 @@
     "test-all": "yarn lint && yarn ts && yarn build && yarn test && yarn build-e2e && yarn test-e2e",
     "test-e2e": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe electron:./app ./test/e2e/HomePage.e2e.ts",
     "test-e2e-live": "node -r @babel/register ./internals/scripts/CheckBuildsExist.js && cross-env NODE_ENV=test testcafe --live electron:./app ./test/e2e/HomePage.e2e.ts",
-    "test-watch": "yarn test --watch"
+    "test-watch": "yarn test --watch",
+    "start-browser-dev": "NODE_ENV=development webpack-dev-server --config configs/webpack.config.browser.dev.babel.js",
+    "build-browser": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.browser.prod.babel.js --colors"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -234,6 +236,7 @@
     "eslint-plugin-testcafe": "^0.2.1",
     "fbjs-scripts": "^1.2.0",
     "file-loader": "^5.0.2",
+    "html-webpack-plugin": "^4.0.4",
     "husky": "^4.2.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",
@@ -263,7 +266,8 @@
     "typescript": "^3.7.5",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.5",
-    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-aliyun-oss": "^0.2.5",
+    "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.2",
